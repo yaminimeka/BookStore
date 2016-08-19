@@ -1,0 +1,56 @@
+<html>
+<head>
+<link REL="StyleSheet" TYPE="text/css" HREF="/BookStore/css/stylesheet.css">
+<title>Login Page</title>
+</head>
+
+<body>
+<div class="header">
+	<center><h1 style="color:#11113F;font-size:40px;text-shadow:0 2px 3px #ccc">Online Book Store</h1></center>
+<ul id="navbar" style="margin-left:35%">
+	<li><a href="Home.html">Home</a></li>
+	<li><a href="AboutUs.html">About Us</a></li>
+	<li><a href="Contact.html">Contact Us</a></li>
+	<li><a href="LoginPage.html">Login</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<form method ='post' name="formLogin" action='/BookStore/LoginServlet'>
+
+</br>
+</br>
+
+<center>Select User type : <input type='radio' name='usertype' value='admin' checked="checked">Admin
+<input type='radio' name='usertype' value='customer'>Customer</br></br>
+<table border="0" style="background:#F3F3F3;"><tr><td>Username: </td><td><input id="loginform" type='text' name='username'></td></tr>
+<tr><td>Password: </td><td><input id="pass" type='password' name='password'></td></tr>
+</table></br></br>
+
+<input type='button' onclick="checkForm()"  value='Submit' id="btn">
+<input type='reset' value='Reset' id="btn"></br></br>
+
+<a href="/BookStore/CustomerRegistration.jsp">Click here for First Time Users</a>
+</center>
+
+
+</form>
+</body>
+<script>
+
+function checkForm(){
+	
+	if(document.getElementById("loginform").value==""||document.getElementById("pass").value=="")
+		{
+			alert("Please provide all inputs");
+			return false;
+		}
+		else
+			{
+			document.forms["formLogin"].submit();
+			}
+			
+	
+}
+
+</script>
+</html>
